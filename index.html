@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sally's resume</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header id="header-root"></header>
+    <main>
+        <section id="introduction"></section>
+        <section id="education"></section>
+        <section id="employment"></section>
+        <section id="contact-section"></section>
+    </main>
+</body>
+    <script
+    src="https://unpkg.com/babel-standalone@6/babel.min.js">
+    </script>
+    <script
+    src="https://unpkg.com/react@16/umd/react.development.js">
+    </script>
+    <script
+    src="https://unpkg.com/react-dom@16/umd/react-dom.development.js">
+    </script>
+    <script type="text/babel">
+    // Our code will go here
+    function Header(props) {
+        return (
+            props.children
+        );
+    };
+    ReactDOM.render(
+    <Header className='header'>
+        <img src="https://ia.media-imdb.com/images/M/MV5BMTY5NzE3NzU3MF5BMl5BanBnXkFtZTgwMjg0NTQ5MDE@._V1_UX214_CR0,0,214,317_AL_.jpg" alt="headshot" id="headshot" />
+        <h1 className="title">About me</h1>
+        <p>Hi, I'm Sally.</p>
+    </Header>,
+    document.querySelector('#header-root')
+    );
+
+    function Intro(props) {
+        return (
+            props.children
+        );
+    };
+    ReactDOM.render(
+    <Intro className='intro'>
+        <p>I love clean code and simple design.</p>
+    </Intro>,
+    document.querySelector('#introduction')
+    );
+
+    function Edu(props) {
+        return (
+        props.children
+        );
+    };
+    ReactDOM.render(
+    <Edu className='education'>
+        <p>I have studied at:</p>
+        <ul>
+            <li>IES BEZMILIANA</li>
+            <li>Minnesota University</li>
+        </ul>
+    </Edu>,
+    document.querySelector('#education')
+    );
+
+    function Work(props) {
+        return (
+        props.children
+        );
+    };
+    ReactDOM.render(
+    <Work className='employment'>
+        <p>I have worked at:</p>
+        <ul>
+            <li>Github as Engineer</li>
+            <li>Jetbrains as Project manager</li>
+        </ul>
+    </Work>,
+    document.querySelector('#employment')
+    );
+
+    function Contact(props) {
+        return (
+        props.children
+        );
+    };
+    ReactDOM.render(
+    <Contact className="contact">
+        <p id="contact-heading">My contact information: </p>
+        <address id="contact-info">
+            <p>Email: <a href="mailto://sally@IntenetExplorer.old">sally@IntenetExplorer.old</a></p>
+            <p>Phone: <a href="tel:+34100572415">+34 100 57 24 15</a></p>
+        </address>
+    </Contact>,
+    document.querySelector('#contact-section')
+    );
+    </script>
+</body>
+</html>
